@@ -26,7 +26,7 @@ jobs:
       env:
         TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
         TG_CHAT_ID:  ${{ secrets.TG_CHAT_ID }}
-        KOYEB_ACCOUNTS:  ${{ KOYEB_ACCOUNTS }}
+        KOYEB_ACCOUNTS: ${{ secrets.KOYEB_ACCOUNTS }}
 
       run: |
         python - <<EOF
