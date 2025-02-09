@@ -3,7 +3,7 @@ name: diylink登录保活
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 11 1,15 * *'  # 每月的 1号和15号 北京时间 19点运行
 
 jobs:
   login:
