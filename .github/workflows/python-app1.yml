@@ -67,6 +67,7 @@ jobs:
                 return False, f"登录失败: {str(e)}"
         # 登录结果
         results = []
+        KOYEB_ACCOUNTS: ${{ secrets.KOYEB_ACCOUNTS }}
         for account in KOYEB_ACCOUNTS:
             email = account['email']
             password = account['password']
