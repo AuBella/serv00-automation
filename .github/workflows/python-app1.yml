@@ -67,7 +67,7 @@ jobs:
                 return False, f"登录失败: {str(e)}"
         # 登录结果
         results = [] 
-        account_info = os.getenv('KOYEB_ACCOUNTS', '[]')
+        account_info = json.loads(os.getenv('KOYEB_ACCOUNTS', '[]'))
         for account in account_info:
             email = account['email']
             password = account['password']
