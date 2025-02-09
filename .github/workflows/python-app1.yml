@@ -26,6 +26,7 @@ jobs:
       env:
         TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
         TG_CHAT_ID:  ${{ secrets.TG_CHAT_ID }}
+        KOYEB_ACCOUNTS:  ${{ secrets.KOYEB_ACCOUNTS }}
 
       run: |
         python - <<EOF
@@ -65,10 +66,9 @@ jobs:
             except requests.RequestException as e:
                 return False, f"登录失败: {str(e)}"
         # 登录结果
-        results = []
-        ssh_info_str = os.getenv('KOYEB_ACCOUNTS', '[]')
-        hosts_info = json.loads(ssh_info_str)
-        for account in hosts_info:
+        results = [] 
+        account_info = os.getenv('KOYEB_ACCOUNTS', '[]')
+        for account in account_info:
             email = account['email']
             password = account['password']
             success, message = login_koyeb(email, password)
